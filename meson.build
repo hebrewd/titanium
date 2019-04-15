@@ -76,11 +76,11 @@ meson.add_dist_script(
   join_paths(meson.build_root(), 'meson-dist', meson.project_name() + '-' + titanium_version)
 )
 
-test(
-  'cargo-test',
-  test_script,
-  args: meson.build_root(),
-  workdir: meson.source_root(),
-  timeout: 3000
-)
+#test(
+#  'cargo-test',
+#  test_script,
+#  args: meson.build_root(),
+#  workdir: meson.source_root(),
+#  timeout: 3000
+#)
 
