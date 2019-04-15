@@ -127,7 +127,6 @@ cargo_release = custom_target('cargo-build',
                                   '@OUTPUT@',
                                   titanium_localedir,
                                   application_id,
-                                  name_suffix,
                                   titanium_version + version_suffix,
                                   profile
                                  ])
