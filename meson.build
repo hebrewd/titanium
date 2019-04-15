@@ -71,10 +71,8 @@ test_script = find_program('scripts/test.sh')
 titanium_sources = files (
 	'src/completers.rs',
 	'src/bookmarks.rs',
-	'src/webview',
 	'src/webview/mod.rs',
 	'src/webview/settings.rs',
-	'src/app',
 	'src/app/browser.rs',
 	'src/app/adblock.rs',
 	'src/app/pass_filler.rs',
