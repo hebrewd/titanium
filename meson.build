@@ -50,23 +50,23 @@ gnome = import('gnome')
 
 titanium_version = meson.project_version()
 
-podcasts_prefix = get_option('prefix')
-podcasts_bindir = join_paths(podcasts_prefix, get_option('bindir'))
-podcasts_localedir = join_paths(podcasts_prefix, get_option('localedir'))
+titanium_prefix = get_option('prefix')
+titanium_bindir = join_paths(titanium_prefix, get_option('bindir'))
+titanium_localedir = join_paths(titanium_prefix, get_option('localedir'))
 
-podcasts_conf = configuration_data()
-podcasts_conf.set('appid', application_id)
-podcasts_conf.set('bindir', podcasts_bindir)
+titanium_conf = configuration_data()
+titanium_conf.set('appid', application_id)
+titanium_conf.set('bindir', titanium_bindir)
 
 datadir = get_option('datadir')
-#subdir('podcasts-gtk/resources')
+#subdir('titanium-gtk/resources')
 
 cargo_script = find_program('scripts/cargo.sh')
 test_script = find_program('scripts/test.sh')
 
-#subdir('podcasts-data/src')
-#subdir('podcasts-downloader/src')
-#subdir('podcasts-gtk/src')
+#subdir('titanium-data/src')
+#subdir('titanium-downloader/src')
+#subdir('titanium-gtk/src')
 
 titanium_sources = files (
 	'src/completers.rs',
@@ -120,9 +120,9 @@ cargo_release = custom_target('cargo-build',
                                ],
                         output: ['titanium'],
                         install: true,
-                        install_dir: podcasts_bindir,
+                        install_dir: titanium_bindir,
                         console: true,
-                        depends: podcasts_resources,
+                        depends: titanium_resources,
                         command: [cargo_script,
                                   '@SOURCE_ROOT@',
                                   '@OUTPUT@',
