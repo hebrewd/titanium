@@ -28,18 +28,18 @@ gresource = find_program('glib-compile-resources', required: true)
 gschemas = find_program('glib-compile-schemas', required: true)
 cargo_vendor = find_program('cargo-vendor', required: false)
 
-if get_option('profile') == 'development'
-  profile = '.Devel'
-  vcs_tag = run_command('git', 'rev-parse', '--short', 'HEAD').stdout().strip()
-  if vcs_tag == ''
-    version_suffix = '-devel'
-  else
-    version_suffix = '-@0@'.format (vcs_tag)
-  endif
-else
-  profile = ''
-  version_suffix = ''
-endif
+#if get_option('profile') == 'development'
+#  profile = '.Devel'
+#  vcs_tag = run_command('git', 'rev-parse', '--short', 'HEAD').stdout().strip()
+#  if vcs_tag == ''
+#    version_suffix = '-devel'
+#  else
+#    version_suffix = '-@0@'.format (vcs_tag)
+#  endif
+#else
+profile = ''
+version_suffix = ''
+#endif
 
 application_id = 'io.github.titanium@0@'.format(profile)
 i18n = import('i18n')
