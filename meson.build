@@ -46,7 +46,7 @@ i18n = import('i18n')
 gnome = import('gnome')
 
 #subdir('podcasts-gtk/po')
-podir = join_paths (meson.source_root (), 'podcasts-gtk', 'po')
+#podir = join_paths (meson.source_root (), 'podcasts-gtk', 'po')
 
 titanium_version = meson.project_version()
 
@@ -62,7 +62,7 @@ datadir = get_option('datadir')
 #subdir('podcasts-gtk/resources')
 
 cargo_script = find_program('scripts/cargo.sh')
-#test_script = find_program('scripts/test.sh')
+test_script = find_program('scripts/test.sh')
 
 #subdir('podcasts-data/src')
 #subdir('podcasts-downloader/src')
@@ -76,11 +76,11 @@ meson.add_dist_script(
   join_paths(meson.build_root(), 'meson-dist', meson.project_name() + '-' + titanium_version)
 )
 
-#test(
-#  'cargo-test',
-#  test_script,
-#  args: meson.build_root(),
-#  workdir: meson.source_root(),
-#  timeout: 3000
-#)
+test(
+  'cargo-test',
+  test_script,
+  args: meson.build_root(),
+  workdir: meson.source_root(),
+  timeout: 3000
+)
 
