@@ -62,7 +62,7 @@ datadir = get_option('datadir')
 #subdir('podcasts-gtk/resources')
 
 cargo_script = find_program('scripts/cargo.sh')
-test_script = find_program('scripts/test.sh')
+#test_script = find_program('scripts/test.sh')
 
 #subdir('podcasts-data/src')
 #subdir('podcasts-downloader/src')
