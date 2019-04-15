@@ -122,11 +122,13 @@ cargo_release = custom_target('cargo-build',
                         install: true,
                         install_dir: titanium_bindir,
                         console: true,
-                        depends: titanium_sources,
                         command: [cargo_script,
-                                  '@SOURCE_ROOT@',
+                                  '@CURRENT_SOURCE_DIR@',
                                   '@OUTPUT@',
-                                  meson.build_root(),
+                                  titanium_localedir,
+                                  application_id,
+                                  name_suffix,
+                                  titanium_version + version_suffix,
                                   profile
                                  ])
 
